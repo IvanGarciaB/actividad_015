@@ -76,3 +76,8 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_add_clientes`(IN `v_nombre` VARCHAR(50), IN `v_ciudad` VARCHAR(50), IN `v_facturacion` DECIMAL(8,2))
+INSERT INTO `clientes` (`id`, `nombre`, `ciudad`, `facturacion`) VALUES (NULL, v_nombre, v_facturacion, v_facturacion)$$
+DELIMITER ;
